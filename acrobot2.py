@@ -104,6 +104,7 @@ class Acrobot2Env(gym.Env):
         return [seed]
 
     def reset(self, theta1=None, theta2=None, omega1=None, omega2=None):
+        self.iteration = 0
         if theta1 is None:
             theta1 = self.np_random.uniform(low=-0.1, high=0.1, size=(1,)).astype(np.float32)[0]
         if theta2 is None:
