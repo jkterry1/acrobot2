@@ -14,7 +14,7 @@ print('Starting loops')
 
 res = 20
 
-array = np.zeros((res, res))
+array = np.zeros((res, res)).astype('float32')
 
 steps = np.linspace(-.1, .1, num=res)
 
@@ -32,7 +32,7 @@ for i in range(res):
             if done:
                 break
 
-        array[i, j] = k
+        array[i, j] = float(k)
 
 im = plt.imshow(model, cmap='plasma')
 

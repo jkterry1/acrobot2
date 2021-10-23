@@ -104,7 +104,7 @@ class Acrobot2Env(gym.Env):
 
     def reset(self, theta1, theta2):
         self.state = np.append(np.array([theta1, theta2]).astype(np.float32), self.np_random.uniform(low=-0.1, high=0.1, size=(2,)).astype(np.float32))
-        print(self.state)
+        #print(self.state)
         return self._get_ob()
 
     def step(self, a):
