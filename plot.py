@@ -40,7 +40,7 @@ for obs in obs_list:
 print('d')
 
 ax = plt.gca(projection="3d")
-ax.scatter(xs, ys, zs, c='r', s=100)
+ax.scatter(xs, ys, zs, c='r')
 ax.plot(xs, ys, zs, color='r')
 
 print('e')
