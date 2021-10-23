@@ -12,7 +12,7 @@ env.seed(42)
 
 model = PPO.load("ppo")
 
-res = 50
+res = 1000
 
 array = np.zeros((res, res)).astype('float32')
 
