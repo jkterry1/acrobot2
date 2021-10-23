@@ -5,7 +5,7 @@ import gym
 import acrobot2
 import numpy as np
 import time
-import tqdm
+from tqdm import tqdm
 
 env = gym.make("Acrobot2-v0")
 env.seed(42)
