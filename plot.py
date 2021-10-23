@@ -4,47 +4,42 @@ from stable_baselines3 import PPO
 import gym
 import acrobot2
 
-print('a')
-
 env = gym.make("Acrobot2-v0")
 
 model = PPO.load("ppo")
 
-model.set_random_seed(1)
-env.seed(1)
+print('Starting loops')
 
-obs_list = []
+for env_seed in [1, 2, 3]:
+    for model_seed in [4, 5, 6]:
 
-print('b')
+        model.set_random_seed(model_seed)
+        env.seed(env_seed)
 
-obs = env.reset()
-obs_list.append(obs)
-while True:
-    action, _states = model.predict(obs, deterministic=True)
-    obs, reward, done, info = env.step(action)
-    obs_list.append(obs)
-    if done:
-        break
+        obs_list = []
 
-xs = []
-ys = []
-zs = []
+        obs = env.reset()
+        obs_list.append(obs)
+        while True:
+            action, _states = model.predict(obs, deterministic=True)
+            obs, reward, done, info = env.step(action)
+            obs_list.append(obs)
+            if done:
+                break
 
-print('c')
+        xs = []
+        ys = []
+        zs = []
 
-for obs in obs_list:
-    xs.append(obs[0])
-    ys.append(obs[1])
-    zs.append(obs[2])
+        for obs in obs_list:
+            xs.append(obs[0])
+            ys.append(obs[1])
+            zs.append(obs[2])
 
-print('d')
+        ax = plt.gca(projection="3d")
+        ax.scatter(xs, ys, zs, c='r')
+        ax.plot(xs, ys, zs, color='r')
 
-ax = plt.gca(projection="3d")
-ax.scatter(xs, ys, zs, c='r')
-ax.plot(xs, ys, zs, color='r')
+        print('Loop saving')
 
-print('e')
-
-plt.savefig('sweet_potatoes.png')
-
-print('f')
+        plt.savefig(str(env_seed) + '_' + str(model_seed) + '.png')
