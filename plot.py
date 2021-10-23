@@ -31,9 +31,9 @@ for env_seed in [1, 2, 3]:
         zs = []
 
         for obs in obs_list:
-            xs.append(obs[0+i])
-            ys.append(obs[1+i])
-            zs.append(obs[2+i])
+            xs.append(obs[0-i])
+            ys.append(obs[1-i])
+            zs.append(obs[2-i])
 
         ax = plt.gca(projection="3d")
         ax.scatter(xs, ys, zs, c='r')
