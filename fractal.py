@@ -14,12 +14,14 @@ print('Starting loops')
 
 array = np.zeros((20, 20))
 
-for x in range(-.2, .2, 1000):
-    for y in range(-.2, .2, 1000):
+steps = list(range(-.2, .2, 1000))
+
+for i in range(1000):
+    for j in range(1000):
  
         obs_list = []
 
-        obs = env.reset(x, y)
+        obs = env.reset(steps[i], steps[j])
         i = 0
         while True:
             action, _states = model.predict(obs, deterministic=True)
@@ -28,7 +30,7 @@ for x in range(-.2, .2, 1000):
             if done:
                 break
 
-        array[x, y] = i
+        array[i, j] = i
 
 im = plt.imshow(model, cmap='plasma')
 
