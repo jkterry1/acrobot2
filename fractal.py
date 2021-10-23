@@ -5,6 +5,7 @@ import gym
 import acrobot2
 import numpy as np
 import time
+import tqdm
 
 env = gym.make("Acrobot2-v0")
 env.seed(42)
@@ -19,7 +20,7 @@ steps = np.linspace(-.1, .1, num=res)
 
 start = time.time()
 
-for i in range(res):
+for i in tqdm(range(res)):
     for j in range(res):
  
         obs_list = []
