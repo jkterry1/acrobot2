@@ -16,7 +16,7 @@ res = 50
 
 array = np.zeros((res, res)).astype('float32')
 
-steps = np.linspace(theta1=-.1, theta2=.1, num=res)
+steps = np.linspace(-.1, .1, num=res)
 
 start = time.time()
 
