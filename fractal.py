@@ -19,8 +19,8 @@ array = np.zeros((res, res)).astype('float32')
 steps = np.linspace(-.1, .1, num=res)
 
 start = time.time()
-
-for i in tqdm(range(res)):
+#for i in tqdm(range(res)):
+for i in range(res):
     for j in range(res):
  
         obs_list = []
