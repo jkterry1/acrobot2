@@ -42,4 +42,4 @@ for env_seed in [1, 2, 3]:
 
         print('Loop saving')
 
-        plt.savefig('./plots' + str(env_seed) + '_' + str(model_seed) + '.png')
+        plt.savefig('./plots/' + str(env_seed) + '_' + str(model_seed) + '.png')
