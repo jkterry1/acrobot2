@@ -325,6 +325,6 @@ def rk4(derivs, y0, t):
 
 
 register(
-    id='Acrobot2',
+    id='Acrobot2-v0',
     entry_point='acrobot2:Acrobot2Env'
 )
