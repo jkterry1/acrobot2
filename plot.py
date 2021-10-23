@@ -41,5 +41,6 @@ for env_seed in [1, 2, 3]:
         ax.plot(xs, ys, zs, color='r')
 
         print('Loop saving')
+        print(len(obs_list))
 
         plt.savefig('./plots/' + str(env_seed) + '_' + str(model_seed) + '.png')
