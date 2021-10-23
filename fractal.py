@@ -34,6 +34,6 @@ for i in range(res):
 
         array[i, j] = float(k)
 
-im = plt.imshow(model, cmap='plasma')
+im = plt.imshow(array, cmap='plasma')
 
 plt.savefig('hopefully_fractal.png')
