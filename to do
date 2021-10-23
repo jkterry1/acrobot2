@@ -1,2 +1,3 @@
-Make sure plots are reproducible with respet to given policy and seeds
 Do something about 4d phasespace issue
+Turn env seed into physical parameters, generate bifurcation diagram?
+Compute chaos measure
