@@ -4,19 +4,20 @@ from stable_baselines3 import PPO
 import gym
 import acrobot2
 import numpy as np
+import time
 
 env = gym.make("Acrobot2-v0")
 env.seed(42)
 
 model = PPO.load("ppo")
 
-print('Starting loops')
-
 res = 20
 
 array = np.zeros((res, res)).astype('float32')
 
 steps = np.linspace(-.1, .1, num=res)
+
+start = time.time()
 
 for i in range(res):
     for j in range(res):
@@ -33,6 +34,10 @@ for i in range(res):
                 break
 
         array[i, j] = float(k)
+
+end = time.time()
+
+print(end-start)
 
 im = plt.imshow(array, cmap='plasma')
 
