@@ -1,3 +1,2 @@
-Deterministically inference through env with different seeds, create phase-space plots for different seeds
 Make sure plots are reproducible with respet to given policy and seeds
 Do something about 4d phasespace issue

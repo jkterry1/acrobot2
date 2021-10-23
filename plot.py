@@ -34,8 +34,8 @@ print('c')
 
 for obs in obs_list:
     xs.append(obs[0])
-    ys.append(obs[0])
-    zs.append(obs[0])
+    ys.append(obs[1])
+    zs.append(obs[2])
 
 print('d')
 
