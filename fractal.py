@@ -18,8 +18,8 @@ array = np.zeros((res, res))
 
 steps = np.linspace(-.1, .1, num=res)
 
-for i in range(1000):
-    for j in range(1000):
+for i in range(res):
+    for j in range(res):
  
         obs_list = []
 
