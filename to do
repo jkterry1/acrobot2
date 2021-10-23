@@ -1,0 +1,3 @@
+Break apart training and learning so save policy can be used
+Deterministically inference through env with different seeds, create phase-space plots for different seeds
+Do something about 4d phasespace issue
