@@ -90,7 +90,7 @@ class Acrobot2Env(gym.Env):
     def __init__(self):
         self.viewer = None
         high = np.array(
-            [1.0, 1.0, 1.0, 1.0, self.MAX_VEL_1, self.MAX_VEL_2], dtype=np.float32
+            [1.0, 1.0, self.MAX_VEL_1, self.MAX_VEL_2], dtype=np.float32
         )
         low = -high
         self.observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
@@ -136,7 +136,7 @@ class Acrobot2Env(gym.Env):
     def _get_ob(self):
         s = self.state
         return np.array(
-            [cos(s[0]), sin(s[0]), cos(s[1]), sin(s[1]), s[2], s[3]], dtype=np.float32
+            [s[0], s[1], s[2], s[3]], dtype=np.float32
         )
 
     def _terminal(self):
