@@ -12,7 +12,7 @@ model = PPO.load("ppo")
 
 print('Starting loops')
 
-array = np.zeros(20, 20)
+array = np.zeros((20, 20))
 
 for x in range(-.2, .2, 1000):
     for y in range(-.2, .2, 1000):
