@@ -113,10 +113,10 @@ class Acrobot2Env(gym.Env):
         torque = self.AVAIL_TORQUE[a]
 
         # Add noise to the force action
-        if self.torque_noise_max > 0:
-            torque += self.np_random.uniform(
-                -self.torque_noise_max, self.torque_noise_max
-            )
+        # if self.torque_noise_max > 0:
+        #     torque += self.np_random.uniform(
+        #         -self.torque_noise_max, self.torque_noise_max
+        #     )
 
         # Now, augment the state with our force action so it can be passed to
         # _dsdt
