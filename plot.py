@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from stable_baselines3 import PPO
 import gym
+import acrobot2
 
 env = gym.make("Acrobot2-v0")
 
