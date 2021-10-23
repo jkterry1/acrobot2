@@ -15,7 +15,7 @@ for env_seed in [1, 2, 3]:
 
     obs_list = []
 
-    obs = env.reset()
+    obs = env.reset(0, 0)
     obs_list.append(obs)
     while True:
         action, _states = model.predict(obs, deterministic=True)
