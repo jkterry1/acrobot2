@@ -3,8 +3,10 @@ from mpl_toolkits.mplot3d import Axes3D
 from stable_baselines3 import PPO
 import gym
 import acrobot2
+from gym.wrappers import TimeLimit
 
 env = gym.make("Acrobot2-v0")
+env = TimeLimit(env, 500)
 
 model = PPO.load("ppo")
 
@@ -15,7 +17,7 @@ for env_seed in [1, 2, 3]:
 
     obs_list = []
 
-    obs = env.reset(0, 0)
+    obs = env.reset()
     obs_list.append(obs)
     while True:
         action, _states = model.predict(obs, deterministic=True)

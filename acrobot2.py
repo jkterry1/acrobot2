@@ -102,8 +102,17 @@ class Acrobot2Env(gym.Env):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
-    def reset(self, theta1, theta2):
-        self.state = np.append(np.array([theta1, theta2]).astype(np.float32), self.np_random.uniform(low=-0.1, high=0.1, size=(2,)).astype(np.float32))
+    def reset(self, theta1=None, theta2=None, omega1=None, omega2=None):
+        if theta1 is None:
+            theta1 = self.np_random.uniform(low=-0.1, high=0.1, size=(1,)).astype(np.float32)[0]
+        if theta2 is None:
+            theta2 = self.np_random.uniform(low=-0.1, high=0.1, size=(1,)).astype(np.float32)[0]
+        if omega1 is None:
+            omega1 = self.np_random.uniform(low=-0.1, high=0.1, size=(1,)).astype(np.float32)[0]
+        if omega2 is None:
+            omega2 = self.np_random.uniform(low=-0.1, high=0.1, size=(1,)).astype(np.float32)[0]
+
+        self.state = np.array([theta1, theta2, omega1, omega2]).astype(np.float32)
         #print(self.state)
         return self._get_ob()
 

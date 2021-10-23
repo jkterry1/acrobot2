@@ -16,7 +16,7 @@ res = 50
 
 array = np.zeros((res, res)).astype('float32')
 
-steps = np.linspace(-.1, .1, num=res)
+steps = np.linspace(theta1=-.1, theta2=.1, num=res)
 
 start = time.time()
 
@@ -25,7 +25,7 @@ for i in tqdm(range(res)):
  
         obs_list = []
 
-        obs = env.reset(steps[i], steps[j])
+        obs = env.reset(theta1=steps[i], theta2=steps[j])
         k = 0
         while True:
             action, _states = model.predict(obs, deterministic=True)
