@@ -24,15 +24,15 @@ for i in range(res):
         obs_list = []
 
         obs = env.reset(steps[i], steps[j])
-        i = 0
+        k = 0
         while True:
             action, _states = model.predict(obs, deterministic=True)
             obs, reward, done, info = env.step(action)
-            i += 1
+            k += 1
             if done:
                 break
 
-        array[i, j] = i
+        array[i, j] = k
 
 im = plt.imshow(model, cmap='plasma')
 
