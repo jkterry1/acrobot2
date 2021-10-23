@@ -36,7 +36,7 @@ for env_seed in [1, 2, 3]:
             zs.append(obs[2-i])
 
         ax = plt.gca(projection="3d")
-        ax.scatter(xs, ys, zs, c='r')
+        #ax.scatter(xs, ys, zs, c='r')
         ax.plot(xs, ys, zs, color='r')
 
         print('Loop saving')
