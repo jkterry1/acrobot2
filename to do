@@ -2,6 +2,6 @@
 
 
 Compute Lyapunov exponent
-Heat map 4th dimension onto curve?
+Heat map 4th dimension onto curve- https://nbviewer.org/github/dpsanders/matplotlib-examples/blob/master/colorline.ipynb
 Interactive plots
 Turn env seed into physical parameters, generate bifurcation diagram?
