@@ -15,7 +15,7 @@ obs_list = []
 obs = env.reset()
 obs_list.append(obs)
 while True:
-    action, _states = model.predict(obs, determinstic=True)
+    action, _states = model.predict(obs, deterministic=True)
     obs, rewards, dones, info = env.step(action)
     obs_list.append(obs)
 
