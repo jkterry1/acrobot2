@@ -12,9 +12,11 @@ model = PPO.load("ppo")
 
 print('Starting loops')
 
-array = np.zeros((20, 20))
+res = 20
 
-steps = list(range(-.2, .2, 1000))
+array = np.zeros((res, res))
+
+steps = np.linspace(-.1, .1, num=res)
 
 for i in range(1000):
     for j in range(1000):
