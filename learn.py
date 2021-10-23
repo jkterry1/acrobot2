@@ -8,7 +8,7 @@ from stable_baselines3.common.env_util import make_vec_env
 env = make_vec_env("Acrobot2-v0", n_envs=4)
 
 model = PPO("MlpPolicy", env, verbose=1)
-model.learn(total_timesteps=50000)
+model.learn(total_timesteps=100000)
 model.save("ppo")
 
 del model  # remove to demonstrate saving and loading
