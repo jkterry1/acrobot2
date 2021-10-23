@@ -3,10 +3,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from stable_baselines3 import PPO
 import gym
 import acrobot2
-from gym.wrappers import TimeLimit
 
 env = gym.make("Acrobot2-v0")
-env = TimeLimit(env, 500)
 
 model = PPO.load("ppo")
 

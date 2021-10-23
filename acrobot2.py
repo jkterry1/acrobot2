@@ -90,12 +90,13 @@ class Acrobot2Env(gym.Env):
     def __init__(self):
         self.viewer = None
         high = np.array(
-            [1.0, 1.0, self.MAX_VEL_1, self.MAX_VEL_2], dtype=np.float32
+            [2*pi, 2*pi, self.MAX_VEL_1, self.MAX_VEL_2], dtype=np.float32
         )
         low = -high
         self.observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
         self.action_space = spaces.Discrete(3)
         self.state = None
+        self.iteration = 0
         self.seed()
 
     def seed(self, seed=None):
@@ -137,6 +138,7 @@ class Acrobot2Env(gym.Env):
         ns[2] = bound(ns[2], -self.MAX_VEL_1, self.MAX_VEL_1)
         ns[3] = bound(ns[3], -self.MAX_VEL_2, self.MAX_VEL_2)
         self.state = ns
+        self.iteration += 1
         terminal = self._terminal()
         reward = -1.0 if not terminal else 0.0
         return (self._get_ob(), reward, terminal, {})
@@ -149,7 +151,7 @@ class Acrobot2Env(gym.Env):
 
     def _terminal(self):
         s = self.state
-        return bool(-cos(s[0]) - cos(s[1] + s[0]) > 1.0)
+        return bool(-cos(s[0]) - cos(s[1] + s[0]) > 1.0) or (self.iteration >= 500)
 
     def _dsdt(self, s_augmented):
         m1 = self.LINK_MASS_1
